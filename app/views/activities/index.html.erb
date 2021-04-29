@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Activities</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Finished</th>
+      <th>Project</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.description %></td>
+        <td><%= activity.start_date %></td>
+        <td><%= activity.end_date %></td>
+        <% if activity.finished %>
+          <td class="alert alert-success" role="alert">
+        <% else %>
+          <td class="alert alert-danger" role="alert">
+        <% end %>
+        <%= activity.finished %>
+        </td>
+
+
+
+
+        
+        
+        <td><%= activity.project.description %></td>
+        <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity', new_activity_path %>
