@@ -1,10 +1,52 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
+<div class="jumbotron">
+  <h1 class="display-4"><%= t('labels.welcome') %></h1>
+  <p class="lead"><%= t('labels.msg') %></p>
+  <hr class="my-4">
+
+  <div class="d-flex flex-row justify-content-center align-items-center" >
+	  <button type="button" class="btn btn-primary">
+		  <span class="badge badge-light"><%= @projects.count %></span>
+      <%= t('labels.resume1') %>
+      <span class="badge badge-light"><%= @open_activities %></span> 
+		  <%= t('labels.resume2') %>
+      <span class="badge badge-light"><%= @activities_total %></span>
+	  </button>
+    <br><span id="finali"><%= t('labels.chart_finished') %></span>
+    <br><span id="open"><%= t('labels.chart_open') %></span>
+  </div>
+  <br>
+    <canvas id="my_Chart" />
+</div>
+
+<script>
+	$(document).ready(function() {
+        let open_activities = <%=@open_activities%>;
+        let finished_activities  = <%=@finished_activities%>;
+        let finished_str = $('#finali').html();
+        let open_str = $('#open').html();
+        $('#finali').html('');
+        $('#open').html('');
+
+        let grap = document.getElementById("my_Chart");
+
+        let dados = {
+            datasets: [{
+                data: [finished_activities, open_activities],
+                backgroundColor: ['rgb(238,232,170)', 'rgb(233,150,122)']
+            }],
+
+            labels: [finished_str, open_str]
+        };
+
+        let opcoes = {
+            cutoutPercentage: 20
+        };
+
+
+        let meuDonutChart = new Chart(grap, {
+            type: 'doughnut',
+            data: dados,
+            options: opcoes
+        });
+	})
+</script>

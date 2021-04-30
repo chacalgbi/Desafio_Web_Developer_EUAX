@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
+  before_action :completed_activities, only: [:show, :edit, :update]
 
   # GET /projects or /projects.json
   def index
@@ -8,6 +9,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1 or /projects/1.json
   def show
+    @projects = Project.all
+    @activities = Activity.all
   end
 
   # GET /projects/new
@@ -66,4 +69,11 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:description, :start_date, :end_date)
     end
+
+    def completed_activities
+      @total = @project.activities.group(:finished).count
+      @true_act = @total[true]
+      @false_act = @total[false]
+    end
+
 end

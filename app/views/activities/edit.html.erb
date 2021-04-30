@@ -2,5 +2,5 @@
 
 <%= render 'form', activity: @activity %>
 
-<%= link_to 'Show', @activity %> |
-<%= link_to 'Back', activities_path %>
+<%= link_to t('links.show'), @activity, class:"btn btn-primary" %> |
+<%= link_to t('links.back'), activities_path, class:"btn btn-primary" %>

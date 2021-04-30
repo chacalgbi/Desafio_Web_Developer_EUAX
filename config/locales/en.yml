@@ -30,4 +30,54 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  actual_locale: "English"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy:
+          has_one: It is not possible to delete the record because there is a dependent %{record}
+          has_many: Cannot delete record because there are%{record} dependent
+    models:
+      project: "Project"
+      activity: "Activity"
+    attributes:
+      project:
+        id: "Code"
+        description: "Description"
+        start_date: "Initial date"
+        end_date: "Final date"
+      activity:
+        id: "Code"
+        description: "Description"
+        start_date: "Initial date"
+        end_date: "Final date"
+        finished: "Finished?"
+        project_id: "Reference Project"
+  links:
+    edit: "Edit"
+    show: "Show"
+    delete: "Delete"
+    back: "Back"
+    new_pro: "New Project"
+    new_act: "New Activity"
+    update: "Updade Project"
+    create: "Create Project"
+  labels:
+    chart_finished: "Finished Activities"
+    chart_open: "Open Activities"
+    finished: "Yes"
+    not_finished: "Not"
+    title_activity: "Activities"
+    title_projects: "Projects"
+    editing_project: "Editing Project"
+    alert_delete: "Do you really want to delete?"
+    nav_bar:
+      home: "Home"
+      projects: "Projects"
+      activities: "Activities"
+    welcome: "Welcome..."
+    msg: "... to the control of EUAX projects. Check out their pending projects and activities below."
+    title_window: "EUAX Group Projects"
+    resume1: " Projects, with "
+    resume2: " open activities, a total of "

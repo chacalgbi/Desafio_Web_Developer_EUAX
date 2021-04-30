@@ -1,6 +1,6 @@
-<h1>Editing Project</h1>
+<h1><%= t('labels.editing_project') %></h1>
 
 <%= render 'form', project: @project %>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to t('links.show'), @project, class:"btn btn-primary" %> |
+<%= link_to t('links.back'), projects_path, class:"btn btn-primary" %>

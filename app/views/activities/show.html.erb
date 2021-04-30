@@ -7,11 +7,11 @@
   </div>
   <div class="form-group">
     <strong>Start date:</strong>
-    <%= text_field_tag nil, @activity.start_date, class:"form-control", disabled: true %>
+    <%= text_field_tag nil, l(@activity.start_date), class:"form-control", disabled: true %>
   </div>
   <div class="form-group">
     <strong>End date:</strong>
-    <%= text_field_tag nil, @activity.end_date, class:"form-control", disabled: true %>
+    <%= text_field_tag nil, l(@activity.end_date), class:"form-control", disabled: true %>
   </div>
   <div class="form-group">
     <strong>Finalizado:</strong>
@@ -23,5 +23,5 @@
   </div>
 <form>
 
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
+<%= link_to t('links.edit'), edit_activity_path(@activity), class:"btn btn-primary" %> |
+<%= link_to t('links.back'), activities_path, class:"btn btn-primary" %>

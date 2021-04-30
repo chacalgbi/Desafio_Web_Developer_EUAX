@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Projetos</title>
+    <title><%= t('labels.title_window') %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,27 +10,29 @@
   </head>
 
   <body>
-    <div class="container-fluid">
+    <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand"   >Grupo EUAX</a>
+        <a class="navbar-brand"   >EUAX</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <%= link_to "Home", inicio_path, class:"nav-link", role:"button" %>
+              <%= link_to t('labels.nav_bar.home'), inicio_path, class:"nav-link", role:"button" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Projetos", projects_path, class:"nav-link", role:"button" %>
+              <%= link_to t('labels.nav_bar.projects'), projects_path, class:"nav-link", role:"button" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Atividades", activities_path, class:"nav-link", role:"button" %>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Listagens</a>
+              <%= link_to t('labels.nav_bar.activities'), activities_path, class:"nav-link", role:"button" %>
             </li>
           </ul>
+          <span class="navbar-text">
+            <span class="nav-link"><%= t('actual_locale') %></span>
+          </span>
+          <%= link_to 'pt-BR', root_path(locale: 'pt-BR'), class:"btn btn-outline-info", role:"button" %>  &nbsp; &nbsp;
+          <%= link_to 'en', root_path(locale: 'en'), class:"btn btn-outline-info", role:"button" %>
         </div>
       </nav>
       <br>

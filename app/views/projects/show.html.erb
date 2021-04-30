@@ -1,55 +1,101 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+<form>
+  <div class="form-group">
+    <strong><%= @projects.human_attribute_name(:description) %></strong>
+    <%= text_field_tag nil, @project.description, class:"form-control", disabled: true %>
+  </div>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @project.start_date %>
-</p>
+  <div class="form-group">
+    <strong><%= @projects.human_attribute_name(:start_date) %></strong>
+    <%= text_field_tag nil, l(@project.start_date), class:"form-control", disabled: true %>
+  </div>
 
-<p>
-  <strong>End date:</strong>
-  <%= @project.end_date %>
-</p>
+  <div class="form-group">
+    <strong><%= @projects.human_attribute_name(:end_date) %></strong>
+    <%= text_field_tag nil, l(@project.end_date), class:"form-control", disabled: true %>
+  </div>
+</form>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-<br>
+<%= link_to t('links.edit'), edit_project_path(@project), class:"btn btn-primary" %> |
+<%= link_to t('links.back'), projects_path, class:"btn btn-primary"  %>
+<br><br>
 
+<div class="row">
+  <div>
+    <h3><%= t('labels.title_activity') %></h3>
 
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th><%= @activities.human_attribute_name(:description) %></th>
+          <th><%= @activities.human_attribute_name(:start_date) %></th>
+          <th><%= @activities.human_attribute_name(:end_date) %></th>
+          <th><%= @activities.human_attribute_name(:finished) %></th>
+          <th><%= @activities.human_attribute_name(:project_id) %></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<h1>Activities</h1>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Finished</th>
-      <th>Project</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @project.activities.each do |activity| %>
-      <tr>
-        <td><%= activity.description %></td>
-        <td><%= activity.start_date %></td>
-        <td><%= activity.end_date %></td>
-        <% if activity.finished %>
-          <td class="alert alert-success" role="alert">
-        <% else %>
-          <td class="alert alert-danger" role="alert">
+      <tbody>
+        <% @project.activities.each do |activity| %>
+          <tr>
+            <td><%= activity.description %></td>
+            <td><%= l(activity.start_date) %></td>
+            <td><%= l(activity.end_date) %></td>
+            <% if activity.finished %>
+              <td class="alert alert-success" role="alert">
+                <%= t('labels.finished') %>
+            <% else %>
+              <td class="alert alert-danger" role="alert">
+                <%= t('labels.not_finished') %>
+            <% end %>
+            </td>
+            <td><%= activity.project.description %></td>
+          </tr>
         <% end %>
-        <%= activity.finished %>
-        </td>
-        <td><%= activity.project.description %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </tbody>
+    </table>
+    <br><span id="finali"><%= t('labels.chart_finished') %></span>
+    <br><span id="open"><%= t('labels.chart_open') %></span>
+  </div>
+  <div class="d-flex flex-row justify-content-center align-items-center">
+    <canvas id="myChart" align="center"></canvas>
+  </div>
+</div>
+
+    <script>
+      $(document).ready(function() {
+        let false_act = <%= @project.activities.where(finished: false).count %>
+        let true_act  = <%= @project.activities.where(finished: true).count %>
+        let finished_str = $('#finali').html();
+        let open_str = $('#open').html();
+        $('#finali').html('');
+        $('#open').html('');
+
+      
+        let ctx = document.getElementById("myChart");
+
+        let dados = {
+            datasets: [{
+                data: [true_act, false_act],
+                backgroundColor: ['rgb(152,251,152)', 'rgb(255,69,0)']
+            }],
+
+            labels: [finished_str, open_str]
+        };
+
+        let opcoes = {
+            cutoutPercentage: 40
+        };
+
+
+        let meuDonutChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: dados,
+            options: opcoes
+        });
+
+
+      })
+    </script>

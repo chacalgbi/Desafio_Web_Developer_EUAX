@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<h1><%= t('labels.title_projects') %></h1>
 
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Start date</th>
-      <th>End date</th>
+      <th><%= @projects.human_attribute_name(:description) %></th>
+      <th><%= @projects.human_attribute_name(:start_date) %></th>
+      <th><%= @projects.human_attribute_name(:end_date) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,11 +16,11 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.description %></td>
-        <td><%= project.start_date %></td>
-        <td><%= project.end_date %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= l(project.start_date) %></td>
+        <td><%= l(project.end_date) %></td>
+        <td><%= link_to t('links.show'), project, class:"btn btn-success" %></td>
+        <td><%= link_to t('links.edit'), edit_project_path(project), class:"btn btn-info" %></td>
+        <td><%= link_to t('links.delete'), project, class:"btn btn-danger", method: :delete, data: { confirm: t('labels.alert_delete') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br><br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to t('links.new_pro'), new_project_path, class:"btn btn-primary" %>
