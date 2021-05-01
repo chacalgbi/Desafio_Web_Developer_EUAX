@@ -50,6 +50,7 @@
             <% end %>
             </td>
             <td><%= activity.project.description %></td>
+            <td><%= link_to t('links.edit'), edit_activity_path(activity), class:"btn btn-info" %></td>
           </tr>
         <% end %>
       </tbody>

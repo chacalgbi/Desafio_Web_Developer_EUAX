@@ -27,9 +27,6 @@
             <li class="nav-item">
               <%= link_to t('labels.nav_bar.activities'), activities_path, class:"nav-link", role:"button" %>
             </li>
-            <li class="nav-item">
-              <%= link_to t('Admins'), admins_path, class:"nav-link", role:"button" %>
-            </li>
             <li class="navbar-item">
               <%= link_to 'pt-BR', root_path(locale: 'pt-BR'), class:"btn btn-outline-info", role:"button" %>  &nbsp; &nbsp;
               <%= link_to 'en', root_path(locale: 'en'), class:"btn btn-outline-info", role:"button" %> &nbsp; &nbsp;
@@ -40,14 +37,21 @@
           </ul>
           <span class="navbar-text">
             <% if profile_signed_in? %>
-              <%= current_profile.email %>
+              <div class="btn-group" role="group" aria-label="Grupo de botões com dropdown aninhado">
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= current_profile.email %>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="#"><%= link_to t('links.edit'), edit_profile_registration_path, class:"btn", role:"button" %></a>
+                    <a class="dropdown-item" href="#"><%= link_to 'Logoff', destroy_profile_session_path, method: :delete, class:"btn", role:"button" %></a>
+                  </div>
+                </div>
+              </div>
             <% else %>
               <%= t('labels.loged') %>
             <% end %>
-          </span>&nbsp; &nbsp;
-          <% if profile_signed_in? %>
-            <%= link_to 'Logoff', destroy_profile_session_path, method: :delete, class:"btn btn-outline-danger", role:"button" %>
-          <% end %>
+          </span>
         </div>
       </nav>
       <br>

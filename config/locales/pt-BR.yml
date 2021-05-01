@@ -33,6 +33,9 @@ pt-BR:
     update: "Atualizar Projeto"
     create: "Criar Projeto"
   labels:
+    will_delay: "Terá Atraso?" 
+    complete: "Completo"
+    days_remaining: "Dias Rest."
     admins_list: "Lista de Administradores"
     loged: "Usuário NÃO Logado"
     chart_finished: "Atividades Finalizadas"

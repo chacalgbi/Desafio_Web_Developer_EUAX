@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
 	resources :activities
 	resources :projects
-	resources :admins
 	
 	devise_for :profiles
   	

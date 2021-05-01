@@ -64,6 +64,9 @@ en:
     update: "Updade Project"
     create: "Create Project"
   labels:
+    will_delay: "Will Delay?" 
+    complete: "Complete"
+    days_remaining: "Days Remaining"
     admins_list: "List of Administrators"
     loged: "User NOT Logged In"
     chart_finished: "Finished Activities"

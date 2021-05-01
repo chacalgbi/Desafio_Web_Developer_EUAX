@@ -1,29 +1,55 @@
 <h1><%= t('labels.title_projects') %></h1>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th><%= @projects.human_attribute_name(:description) %></th>
-      <th><%= @projects.human_attribute_name(:start_date) %></th>
-      <th><%= @projects.human_attribute_name(:end_date) %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td><%= project.description %></td>
-        <td><%= l(project.start_date) %></td>
-        <td><%= l(project.end_date) %></td>
-        <td><%= link_to t('links.show'), project, class:"btn btn-success" %></td>
-        <td><%= link_to t('links.edit'), edit_project_path(project), class:"btn btn-info" %></td>
-        <td><%= link_to t('links.delete'), project, class:"btn btn-danger", method: :delete, data: { confirm: t('labels.alert_delete') } %></td>
+        <th><%= @projects.human_attribute_name(:description) %></th>
+        <th><%= @projects.human_attribute_name(:start_date) %></th>
+        <th><%= @projects.human_attribute_name(:end_date) %></th>
+        <th><%= t('labels.days_remaining') %></th>
+        <th><%= t('labels.complete') %></th>
+        <th><%= t('labels.will_delay') %></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @projects.each do |project| %>
+        <% @days = (project.end_date - Date.today()).to_i %>
+        <% total_activities = (project.activities.count).to_f %>
+        <% complete = (project.activities.where(finished: true).count).to_f %>
+        <% percent = ((100 / total_activities) * complete).ceil(1) %>
+        <% date_last_activity = (project.activities.maximum('end_date')).to_date %>
+        <tr>
+          <td><%= project.description %></td>
+          <td><%= l(project.start_date) %></td>
+          <td><%= l(project.end_date) %></td>
+          <% if @days < 0 %>
+          <td class="alert alert-danger" style="text-align: center;" >
+            <%= @days %>
+          <% else %>
+          <td style="text-align: center;" >
+            <%= @days %>
+          <% end %>
+          </td>
+          <td style="text-align: center;" ><%= percent %> %</td>
+            <% if date_last_activity > project.end_date %>
+              <td class="alert alert-danger" role="alert" style="text-align: center;" >
+              <%= t('labels.finished') %>
+            <% else %>
+              <td class="alert alert-success" role="alert" style="text-align: center;" >
+              <%= t('labels.not_finished') %>
+            <% end %>
+          </td>
+          <td><%= link_to t('links.show'), project, class:"btn btn-success" %></td>
+          <td><%= link_to t('links.edit'), edit_project_path(project), class:"btn btn-info" %></td>
+          <td><%= link_to t('links.delete'), project, class:"btn btn-danger", method: :delete, data: { confirm: t('labels.alert_delete') } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br><br>
 
 <%= link_to t('links.new_pro'), new_project_path, class:"btn btn-primary" %>
+<%= link_to t('links.new_act'), new_activity_path, class:"btn btn-primary" %>
