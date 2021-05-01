@@ -1,5 +1,9 @@
 <h2>Resend unlock instructions</h2>
 
+<% flash.each do |key, value| %>
+  <div class="flash <%= key %>"><%= value %></div>
+<% end %>
+
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "profiles/shared/error_messages", resource: resource %>
 

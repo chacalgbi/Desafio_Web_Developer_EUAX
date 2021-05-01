@@ -33,6 +33,8 @@ pt-BR:
     update: "Atualizar Projeto"
     create: "Criar Projeto"
   labels:
+    admins_list: "Lista de Administradores"
+    loged: "Usuário NÃO Logado"
     chart_finished: "Atividades Finalizadas"
     chart_open: "Atividades em Aberto"
     finished: "Sim"

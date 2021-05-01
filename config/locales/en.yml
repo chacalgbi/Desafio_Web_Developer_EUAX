@@ -64,6 +64,8 @@ en:
     update: "Updade Project"
     create: "Create Project"
   labels:
+    admins_list: "List of Administrators"
+    loged: "User NOT Logged In"
     chart_finished: "Finished Activities"
     chart_open: "Open Activities"
     finished: "Yes"

@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+  before_action :authenticate_profile!
   before_action :set_activity, only: %i[ show edit update destroy ]
   before_action :set_project_options, only: [:new, :show, :edit, :update, :create]
 

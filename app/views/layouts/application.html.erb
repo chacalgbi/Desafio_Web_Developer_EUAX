@@ -27,15 +27,37 @@
             <li class="nav-item">
               <%= link_to t('labels.nav_bar.activities'), activities_path, class:"nav-link", role:"button" %>
             </li>
+            <li class="nav-item">
+              <%= link_to t('Admins'), admins_path, class:"nav-link", role:"button" %>
+            </li>
+            <li class="navbar-item">
+              <%= link_to 'pt-BR', root_path(locale: 'pt-BR'), class:"btn btn-outline-info", role:"button" %>  &nbsp; &nbsp;
+              <%= link_to 'en', root_path(locale: 'en'), class:"btn btn-outline-info", role:"button" %> &nbsp; &nbsp;
+            </li>
+            <li class="navbar-item">
+              <span class="nav-link"><%= t('actual_locale') %></span>
+            </li>
           </ul>
           <span class="navbar-text">
-            <span class="nav-link"><%= t('actual_locale') %></span>
-          </span>
-          <%= link_to 'pt-BR', root_path(locale: 'pt-BR'), class:"btn btn-outline-info", role:"button" %>  &nbsp; &nbsp;
-          <%= link_to 'en', root_path(locale: 'en'), class:"btn btn-outline-info", role:"button" %>
+            <% if profile_signed_in? %>
+              <%= current_profile.email %>
+            <% else %>
+              <%= t('labels.loged') %>
+            <% end %>
+          </span>&nbsp; &nbsp;
+          <% if profile_signed_in? %>
+            <%= link_to 'Logoff', destroy_profile_session_path, method: :delete, class:"btn btn-outline-danger", role:"button" %>
+          <% end %>
         </div>
       </nav>
       <br>
+      
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
 
       <%= yield %>
 
