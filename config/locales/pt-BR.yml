@@ -33,6 +33,7 @@ pt-BR:
     update: "Atualizar Projeto"
     create: "Criar Projeto"
   labels:
+    days: "Dias"
     will_delay: "Terá Atraso?" 
     complete: "Completo"
     days_remaining: "Dias Rest."

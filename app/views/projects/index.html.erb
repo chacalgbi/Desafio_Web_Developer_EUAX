@@ -15,32 +15,13 @@
 
     <tbody>
       <% @projects.each do |project| %>
-        <% @days = (project.end_date - Date.today()).to_i %>
-        <% total_activities = (project.activities.count).to_f %>
-        <% complete = (project.activities.where(finished: true).count).to_f %>
-        <% percent = ((100 / total_activities) * complete).ceil(1) %>
-        <% date_last_activity = (project.activities.maximum('end_date')).to_date %>
         <tr>
           <td><%= project.description %></td>
           <td><%= l(project.start_date) %></td>
           <td><%= l(project.end_date) %></td>
-          <% if @days < 0 %>
-          <td class="alert alert-danger" style="text-align: center;" >
-            <%= @days %>
-          <% else %>
-          <td style="text-align: center;" >
-            <%= @days %>
-          <% end %>
-          </td>
-          <td style="text-align: center;" ><%= percent %> %</td>
-            <% if date_last_activity > project.end_date %>
-              <td class="alert alert-danger" role="alert" style="text-align: center;" >
-              <%= t('labels.finished') %>
-            <% else %>
-              <td class="alert alert-success" role="alert" style="text-align: center;" >
-              <%= t('labels.not_finished') %>
-            <% end %>
-          </td>
+          <%= days_Remaining(project.end_date) %>
+          <td style="text-align: center;" ><%= complete(project.activities.count, project.activities.where(finished: true).count) %>% </td>
+          <%= date_finish((project.activities.maximum('end_date')).to_date, project.end_date) %>
           <td><%= link_to t('links.show'), project, class:"btn btn-success" %></td>
           <td><%= link_to t('links.edit'), edit_project_path(project), class:"btn btn-info" %></td>
           <td><%= link_to t('links.delete'), project, class:"btn btn-danger", method: :delete, data: { confirm: t('labels.alert_delete') } %></td>
