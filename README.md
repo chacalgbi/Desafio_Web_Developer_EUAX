@@ -17,11 +17,27 @@
 
 <h4 align="center">
     ✅ Status do Projeto
-	🚧  Cadastro de Projetos - Em melhorias...  🚧
+	🚧  - Em melhorias...  🚧
 </h4>
 
 ### Features
 
-- [x] Cadastro de usuário
-- [x] Cadastro de cliente
-- [ ] Cadastro de produtos
+- [x] CRUD de projeto
+- [x] CRUD de atividades
+- [x] Regras de negócio exigidas no teste
+- [x] Uso e configuração da gem Devise
+- [x] CRUD de administradores
+- [x] Listagem de projetos
+- [x] Listagem de atividades
+- [x] Resumo de Projetos e Atividades
+- [ ] Uso da gem Chart.js
+- [x] Gráfico de atividades geral
+- [x] Gráfico de atividades por projeto
+- [x] Notificações personalizadas com (Notify.js)
+- [x] Testes com RSpec
+- [x] Melhorias do código com Rubocop
+- [x] Uso da GEM Faker para fazer testes no model
+- [ ] Testes do Controller
+- [ ] Testes da View
+- [x] Implementação da Internacionalização com Português e Inglês
+- [x] gem tty-spinner para animar as tasks personalizadas
