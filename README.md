@@ -7,7 +7,7 @@
 <img src="https://img.shields.io/badge/Licence-MIT-brightgreen"/>
 
 <h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://simpleicons.org/icons/rubyonrails.svg" />
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://simpleicons.org/icons/rubyonrails.svg" height="50" width="150" />
 </h1>
 
 <h4 align="center">
