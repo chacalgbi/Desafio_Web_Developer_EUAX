@@ -33,6 +33,8 @@ en:
     update: "Updade Project"
     create: "Create Project"
   labels:
+    new_project: "New Project"
+    new_activity: "New Activity"
     days: "Days"
     will_delay: "Will Delay?" 
     complete: "Complete"
