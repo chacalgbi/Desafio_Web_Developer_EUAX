@@ -14,6 +14,7 @@
     <br><span id="finali"><%= t('labels.chart_finished') %></span>
     <br><span id="open"><%= t('labels.chart_open') %></span>
   </div>
+  <script>$.notify("<%= @open_activities %> <%= t('labels.activities_notify') %>");</script>
   <br>
     <canvas id="my_Chart" />
 </div>

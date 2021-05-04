@@ -17,4 +17,5 @@
 //= require popper
 //= require bootstrap
 //= require Chart.min
+//= require notifyjs_rails
 //= require_tree .

@@ -19,9 +19,9 @@
           <td><%= project.description %></td>
           <td><%= l(project.start_date) %></td>
           <td><%= l(project.end_date) %></td>
-          <%= days_Remaining(project.end_date) %>
+          <%= days_remaining(project.end_date) %>
           <td style="text-align: center;" ><%= complete(project.activities.count, project.activities.where(finished: true).count) %>% </td>
-          <%= date_finish((project.activities.maximum('end_date')).to_date, project.end_date) %>
+          <%= date_finish(project.activities.maximum('end_date'), project.end_date) %>
           <td><%= link_to t('links.show'), project, class:"btn btn-success" %></td>
           <td><%= link_to t('links.edit'), edit_project_path(project), class:"btn btn-info" %></td>
           <td><%= link_to t('links.delete'), project, class:"btn btn-danger", method: :delete, data: { confirm: t('labels.alert_delete') } %></td>

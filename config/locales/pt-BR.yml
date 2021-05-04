@@ -56,8 +56,7 @@ pt-BR:
     title_window: "Projetos do Grupo EUAX"
     resume1: " Projetos, com "
     resume2: " atividades em aberto, de um total de "
-
-
+    activities_notify: "Atividades em Aberto"
   date:
     abbr_day_names:
     - dom
