@@ -37,6 +37,7 @@
 - [x] gem tty-spinner para animar as tasks personalizadas
 - [ ] Testes do Controller
 - [ ] Testes da View
+- [ ] Traduzir de forma correta todo o Devise
 
 <h2 align="center">O que poderia ser acrescentado</h2>
 <p>O desafio foi muito bom mas devido a falta de tempo, faltou ser implementado algumas funcionalidades que apesar de não terem sido incluídas no desafio, julgo muito importantes, como: </p>
@@ -45,4 +46,5 @@
 <li>Não permitir cadastro de atividades com data X dias maior que a data final do projeto</li>
 <li>Fazer mais testes de Model (o que foi feito foram testes bem simples)</li>
 <li>Extender os testes para os Controllers e as Views</li>
+<li>Também precisa dar uma lapidada em todas as views e traduções do Devise</li>
 </ul>
