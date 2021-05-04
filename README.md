@@ -7,6 +7,7 @@
 <img src="https://img.shields.io/badge/Licence-MIT-brightgreen"/>
 
 <h1 align="center">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://simpleicons.org/icons/ruby.svg" height="100" width="100" />
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://simpleicons.org/icons/rubyonrails.svg" height="100" width="200" />
 </h1>
 
@@ -32,11 +33,10 @@
 - [x] Testes com RSpec
 - [x] Melhorias do código com Rubocop
 - [x] Uso da GEM Faker para fazer testes no model
-- [ ] Testes do Controller
-- [ ] Testes da View
 - [x] Implementação da Internacionalização com Português e Inglês
 - [x] gem tty-spinner para animar as tasks personalizadas
-
+- [ ] Testes do Controller
+- [ ] Testes da View
 
 <h2 align="center">O que poderia ser acrescentado</h2>
 <p>O desafio foi muito bom mas devido a falta de tempo, faltou ser implementado algumas funcionalidades que apesar de não ter sido incluida no desafio, eu julgo muito importante, como: </p>
