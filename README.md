@@ -7,7 +7,7 @@
 <img src="https://img.shields.io/badge/Licence-MIT-brightgreen"/>
 
 <h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://simpleicons.org/icons/rubyonrails.svg" height="50" width="150" />
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://simpleicons.org/icons/rubyonrails.svg" height="100" width="200" />
 </h1>
 
 <h4 align="center">
@@ -38,3 +38,11 @@
 - [x] gem tty-spinner para animar as tasks personalizadas
 
 
+<h3 align="center">O que poderia ser acrescentado</h3>
+<p align="center">O desafio foi muito bom mas devido a falta de tempo, faltou ser implementado algumas funcionalidades que apesar de não ter sido incluida no desafio, eu julgo muito importante, como: </p>
+<ol>
+<li>Avisar ao cadastrar uma data final de atividade, se a mesma é maior que a data final do projeto</li>
+<li>Não permitir cadastro de atividades com data X dias maior que a data final do projeto</li>
+<li>Fazer mais testes de Model (o que foi feito foram testes bem simples)</li>
+<li>Extender os testes para os Controllers e as Views</li>
+</ol>
