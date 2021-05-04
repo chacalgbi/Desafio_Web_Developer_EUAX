@@ -6,14 +6,9 @@
 <p align="center">🚀 O teste consiste em criar um sistema para gerenciar projetos e suas respectivas atividades</p>
 <img src="https://img.shields.io/badge/Licence-MIT-brightgreen"/>
 
-<p align="center">
- <a href="#objetivo">Objetivo</a> •
- <a href="#gems">GEMs usadas</a> • 
- <a href="#melhorias">O que pode ser melhorado</a> • 
- <a href="#testes">Testes</a> • 
- <a href="#licenca">Licença</a> • 
- <a href="#autor">Autor</a>
-</p>
+<h1 align="center">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://simpleicons.org/icons/rubyonrails.svg" />
+</h1>
 
 <h4 align="center">
     ✅ Status do Projeto
@@ -30,7 +25,7 @@
 - [x] Listagem de projetos
 - [x] Listagem de atividades
 - [x] Resumo de Projetos e Atividades
-- [ ] Uso da gem Chart.js
+- [x] Uso da gem Chart.js
 - [x] Gráfico de atividades geral
 - [x] Gráfico de atividades por projeto
 - [x] Notificações personalizadas com (Notify.js)
@@ -41,3 +36,5 @@
 - [ ] Testes da View
 - [x] Implementação da Internacionalização com Português e Inglês
 - [x] gem tty-spinner para animar as tasks personalizadas
+
+
