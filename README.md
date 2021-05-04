@@ -7,8 +7,8 @@
 <img src="https://img.shields.io/badge/Licence-MIT-brightgreen"/>
 
 <h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://simpleicons.org/icons/ruby.svg" height="100" width="250" />
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="https://simpleicons.org/icons/rubyonrails.svg" height="100" width="250" />
+  <img alt="Ruby" title="#NextLevelWeek" src="https://simpleicons.org/icons/ruby.svg" height="50" width="50" />
+  <img alt="Ruby on Rails" title="#NextLevelWeek" src="https://simpleicons.org/icons/rubyonrails.svg" height="100" width="250" />
 </h1>
 
 <h4 align="center">
