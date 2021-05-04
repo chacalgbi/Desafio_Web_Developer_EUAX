@@ -4,7 +4,7 @@
     <a href="http://thomelucas.com.br/dev/">🔗 Deploy do projeto</a>
 </h1>
 <p align="center">🚀 O teste consiste em criar um sistema para gerenciar projetos e suas respectivas atividades</p>
-<img src="https://img.shields.io/badge/Desafio-Ruby%20on%20Rails-brightgreen"/>
+<img src="https://img.shields.io/badge/Licence-MIT-brightgreen"/>
 
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
