@@ -39,7 +39,7 @@
 - [ ] Testes da View
 
 <h2 align="center">O que poderia ser acrescentado</h2>
-<p>O desafio foi muito bom mas devido a falta de tempo, faltou ser implementado algumas funcionalidades que apesar de não ter sido incluida no desafio, eu julgo muito importante, como: </p>
+<p>O desafio foi muito bom mas devido a falta de tempo, faltou ser implementado algumas funcionalidades que apesar de não terem sido incluídas no desafio, julgo muito importantes, como: </p>
 <ul>
 <li>Avisar ao cadastrar uma data final de atividade, se a mesma é maior que a data final do projeto</li>
 <li>Não permitir cadastro de atividades com data X dias maior que a data final do projeto</li>
