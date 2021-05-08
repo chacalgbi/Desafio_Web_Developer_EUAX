@@ -20,7 +20,7 @@
           <td><%= l(project.start_date) %></td>
           <td><%= l(project.end_date) %></td>
           <%= days_remaining(project.end_date) %>
-          <td style="text-align: center;" ><%= complete(project.activities.count, project.activities.where(finished: true).count) %>% </td>
+          <td style="text-align: center;" ><%= complete(project.activities.size, project.activities.pluck(:finished)) %>% </td>
           <%= date_finish(project.activities.maximum('end_date'), project.end_date) %>
           <td><%= link_to t('links.show'), project, class:"btn btn-success" %></td>
           <td><%= link_to t('links.edit'), edit_project_path(project), class:"btn btn-info" %></td>
